@@ -2,12 +2,12 @@ const prop1 = document.getElementById('prop-1-submit');
 prop1.addEventListener('click', () => {
 
     // Setup
-    let fName = $('#prop-1-fName').val();
-    let lName = $('#prop-1-lName').val();
-    let lang = $('#prop-1-lang').val();
+    const fName = $('#prop-1-fName').val();
+    const lName = $('#prop-1-lName').val();
+    const lang = $('#prop-1-lang').val();
 
     // Creates Greetr Object!
-    let gObj = G$(fName, lName, lang);
+    const gObj = G$(fName, lName, lang);
     // Or: let gObj = Greetr(fName, lName, lang);
 
     // Saving the user's original language choice
