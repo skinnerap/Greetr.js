@@ -28,8 +28,11 @@
     // Properties are never directly accessible
     // Supported Languages
     const supportedLangs = [
-        'en',
-        'es'
+        'en', // English
+        'es', // Spanish
+        'de', // German
+        'ko', // Korean
+        'it', // Italian
     ];
 
     // Hidden within the scope is this IIFE
@@ -38,6 +41,9 @@
     const greetings = {
         'en': 'Hello',
         'es': 'Hola',
+        'de': 'Hallo',
+        'ko': '여보세요',
+        'it': 'Ciao',
     }
 
     // Hidden within the scope is this IIFE
@@ -46,6 +52,9 @@
     const formalGreetings = {
         'en': 'Greetings',
         'es': 'Saludos',
+        'de': 'Grüß Gott',
+        'ko': '안녕하세요',
+        'it': 'Salve',
     }
 
     // Hidden within the scope is this IIFE
@@ -54,6 +63,9 @@
     const logMessages = {
         'en': 'Logged in...',
         'es': 'Conectado...',
+        'de': 'Eingeloggt...',
+        'ko': '로그인...',
+        'it': 'connesso...',
     }
 
     Greetr.prototype = {
