@@ -54,6 +54,8 @@
                     <p>
                         <code id="code-1">const g = G$( firstName, lastName, language );</code>
                     </p>
+                    <p>firstName and lastName must be strings</p>
+                    <p>language must be a valid string stored in supportedLangs{}</p>
                     <button id="copy-code-1" data-clipboard-target="#code-1">Copy Code</button>
                 </div>
                 <div class="code-title">Casual Greeting:</div>
@@ -61,6 +63,7 @@
                     <p>
                         <code id="code-2">g.updateHtml( HTML Selector );</code>
                     </p>
+                    <p>HTML Selector must be a valid html selector</p>
                     <button id="copy-code-2" data-clipboard-target="#code-2">Copy Code</button>
                     <p>
                         Result:
@@ -72,6 +75,10 @@
                     <p>
                         <code id="code-3">g.updateHtml( HTML Selector, true );</code>
                     </p>
+                    <p>HTML Selector must be a valid html selector</p>
+                    <p>Second parameter must be a boolean</p>
+                    <p>Second parameter true indicates formal greeting</p>
+                    <p>Second parameter as false or omitted indicates casual greeting</p>
                     <button id="copy-code-3" data-clipboard-target="#code-3">Copy Code</button>
                     <p>Result:</p>
                     <p class="example" id="prop-2"></p>
@@ -81,6 +88,7 @@
                     <p>
                         <code id="code-4">g.setLang('es');</code>
                     </p>
+                    <p>Must be a valid string stored in supportedLangs{}</p>
                     <button id="copy-code-4" data-clipboard-target="#code-4">Copy Code</button>
                     <p>
                         Result: Changes the language to Spanish<br>
@@ -103,6 +111,7 @@
                     <code class="code-5">// Could use the formal version by setting the second parameter</code><br>
                     <code class="code-5">// of the updateHtml function as 'true'</code>
                 </p>
+                <p>Just like jQuery, you can chain methods!</p>
                 <button id="copy-code-5" data-clipboard-target=".code-5">Copy Code</button>
                 <p>
                     Result:
@@ -114,6 +123,7 @@
                 <p>
                     <code id="code-6">g.setLang('es').updateHtml( Html Selector, true );</code>
                 </p>
+                <p>This example showcases chaining methods and including optional parameters!</p>
                 <button id="copy-code-6" data-clipboard-target="#code-6">Copy Code</button>
                 <p>
                     Result:
@@ -137,6 +147,7 @@
                     <code id="code-8">g.setMessage( string ).updateHtml( selector, formal boolean, true );</code><br>
                     <code>// 'formal' is false in this example</code>
                 </p>
+                <p>This feature makes Greetr far less trivial!</p>
                 <button id="copy-code-8" data-clipboard-target="#code-8">Copy Code</button>
                 <p>
                     Result:
