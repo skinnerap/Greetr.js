@@ -1,9 +1,11 @@
 const prop1 = document.getElementById('prop-1-submit');
 prop1.addEventListener('click', () => {
 
+    topbar.hide();
+
     topbar.config({
         autoRun      : false,
-        barThickness : 15,
+        barThickness : 5,
         barColors    : {
             '0'        : 'rgba(26,  188, 156, .7)',
             '.3'       : 'rgba(41,  128, 185, .7)',
@@ -13,9 +15,13 @@ prop1.addEventListener('click', () => {
         shadowColor  : 'rgba(0, 0, 0, .5)',
         className    : 'topbar',
     });
-
+    
     topbar.show();
-    topbar.hide();
+    (function step() {
+        setTimeout(function() {
+            if (topbar.progress('+.01') < 1) step()
+        }, 16)
+    })();
 
     // Setup
     const fName = $('#prop-1-fName').val();
