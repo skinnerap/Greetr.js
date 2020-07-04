@@ -7,6 +7,7 @@
     <title>Greetr Application</title>
 
     <link href="style.css" type="text/css" rel="stylesheet">
+    <link href="prism.css" type="text/css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
 
@@ -51,17 +52,16 @@
                 <div class="code-title">Setup:</div>
                 <div class="example-code">
                     <p>
-                        const fName = $(Selector1).val();    <br>
-                        const lName = $(Selector2).val();    <br>
-                        const lang = $(Selector3).val();     <br>
-                        const gObj = G$(fName, lName, lang); <br>
+                        <code id="code-1">const g = G$( fName, lName, lang );</code>
                     </p>
+                    <button id="copy-code-1" data-clipboard-target="#code-1">Copy Code</button>
                 </div>
                 <div class="code-title">Casual Greeting:</div>
                 <div class="example-code">
                     <p>
-                        gObj.updateHtml(HTML Selector);
+                        <code id="code-2">g.updateHtml( HTML Selector );</code>
                     </p>
+                    <button id="copy-code-2" data-clipboard-target="#code-2">Copy Code</button>
                     <p>
                         Result:
                     </p>
@@ -69,15 +69,19 @@
                 </div>
                 <div class="code-title">Formal Greeting:</div>
                 <div class="example-code">
-                    <p>gObj.updateHtml(HTML Selector, true);</p>
+                    <p>
+                        <code id="code-3">g.updateHtml( HTML Selector, true );</code>
+                    </p>
+                    <button id="copy-code-3" data-clipboard-target="#code-3">Copy Code</button>
                     <p>Result:</p>
                     <p class="example" id="prop-2"></p>
                 </div>
                 <div class="code-title">Change Language:</div>
                 <div class="example-code">
                     <p>
-                        gObj.setLang('es');
+                        <code id="code-4">g.setLang('es');</code>
                     </p>
+                    <button id="copy-code-4" data-clipboard-target="#code-4">Copy Code</button>
                     <p>
                         Result: Changes the language to Spanish<br>
                     </p>
@@ -95,10 +99,11 @@
             <div class="code-title">Change Language and Casual Greet:</div>
             <div class="example-code">
                 <p>
-                    gObj.setLang('es').updateHtml(Html Selector); <br>
-                    // Could use the formal version by setting the second parameter <br>
-                    // of the updateHtml function as 'true'<br>
+                    <code class="code-5">g.setLang('es').updateHtml( Html Selector );</code><br>
+                    <code class="code-5">// Could use the formal version by setting the second parameter</code><br>
+                    <code class="code-5">// of the updateHtml function as 'true'</code>
                 </p>
+                <button id="copy-code-5" data-clipboard-target=".code-5">Copy Code</button>
                 <p>
                     Result:
                 </p>
@@ -107,8 +112,9 @@
             <div class="code-title">Change Language and Formal Greet:</div>
             <div class="example-code">
                 <p>
-                    gObj.setLang('es').updateHtml(Html Selector, true); <br>
+                    <code id="code-6">g.setLang('es').updateHtml( Html Selector, true );</code>
                 </p>
+                <button id="copy-code-6" data-clipboard-target="#code-6">Copy Code</button>
                 <p>
                     Result:
                 </p>
@@ -117,8 +123,9 @@
             <div class="code-title">Console Logging:</div>
             <div class="example-code">
                 <p>
-                    gObj.log(); <br>
+                    <code id="code-7">g.log();</code>
                 </p>
+                <button id="copy-code-7" data-clipboard-target="#code-7">Copy Code</button>
                 <p>
                     Result: Inspect Console for Result
                 </p>
@@ -127,8 +134,10 @@
             <div class="code-title">Custom Message:</div>
             <div class="example-code">
                 <p>
-                    gObj.setMessage( string ).updateHtml( selector, formal boolean, true );
+                    <code id="code-8">g.setMessage( string ).updateHtml( selector, formal boolean, true );</code><br>
+                    <code>// 'formal' is false in this example</code>
                 </p>
+                <button id="copy-code-8" data-clipboard-target="#code-8">Copy Code</button>
                 <p>
                     Result:
                 </p>
@@ -140,6 +149,8 @@
 
     <!--<script src="jquery-3.5.1.min.js"-->
     <script src="greetr.min.js"></script>
+    <script src="node_modules/clipboard/dist/clipboard.min.js"></script>
+    <script src="prism.js"></script>
     <script src="app.js"></script>
 
 </body>

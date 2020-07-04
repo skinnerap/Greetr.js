@@ -50,3 +50,75 @@ prop1.addEventListener('click', () => {
     gObj.setMessage(message).updateHtml('#prop-7', false, true);
 
 });
+
+const copy1 = document.querySelector('#copy-code-1');
+const clip1 = new ClipboardJS( copy1 );
+clip1.on('success', function( e ) {
+    console.log( e );
+});
+clip1.on('failure', function( e ) {
+    console.log( e );
+});
+
+const copy2 = document.querySelector('#copy-code-2');
+const clip2 = new ClipboardJS( copy2 );
+clip2.on('success', function( e ) {
+    console.log( e );
+});
+clip2.on('failure', function( e ) {
+    console.log( e );
+});
+
+const copy3 = document.querySelector('#copy-code-3');
+const clip3 = new ClipboardJS( copy3 );
+clip3.on('success', function( e ) {
+    console.log( e );
+});
+clip3.on('failure', function( e ) {
+    console.log( e );
+});
+
+const copy4 = document.querySelector('#copy-code-4');
+const clip4 = new ClipboardJS( copy4 );
+clip4.on('success', function( e ) {
+    console.log( e );
+});
+clip4.on('failure', function( e ) {
+    console.log( e );
+});
+
+const copy5 = document.querySelector('#copy-code-5');
+const clip5 = new ClipboardJS( copy5 );
+clip5.on('success', function( e ) {
+    console.log( e );
+});
+clip5.on('failure', function( e ) {
+    console.log( e );
+});
+
+const copy6 = document.querySelector('#copy-code-6');
+const clip6 = new ClipboardJS( copy6 );
+clip6.on('success', function( e ) {
+    console.log( e );
+});
+clip6.on('failure', function( e ) {
+    console.log( e );
+});
+
+const copy7 = document.querySelector('#copy-code-7');
+const clip7 = new ClipboardJS( copy7 );
+clip7.on('success', function( e ) {
+    console.log( e );
+});
+clip7.on('failure', function( e ) {
+    console.log( e );
+});
+
+const copy8 = document.querySelector('#copy-code-8');
+const clip8 = new ClipboardJS( copy8 );
+clip8.on('success', function( e ) {
+    console.log( e );
+});
+clip8.on('failure', function( e ) {
+    console.log( e );
+});
