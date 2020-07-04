@@ -1,7 +1,21 @@
 const prop1 = document.getElementById('prop-1-submit');
 prop1.addEventListener('click', () => {
 
+    topbar.config({
+        autoRun      : false,
+        barThickness : 15,
+        barColors    : {
+            '0'        : 'rgba(26,  188, 156, .7)',
+            '.3'       : 'rgba(41,  128, 185, .7)',
+            '1.0'      : 'rgba(231, 76,  60,  .7)'
+        },
+        shadowBlur   : 5,
+        shadowColor  : 'rgba(0, 0, 0, .5)',
+        className    : 'topbar',
+    });
+
     topbar.show();
+    topbar.hide();
 
     // Setup
     const fName = $('#prop-1-fName').val();
@@ -51,9 +65,7 @@ prop1.addEventListener('click', () => {
     gObj.updateHtml('#prop-7', true, true);*/
     gObj.setMessage(message).updateHtml('#prop-7', false, true);
 
-    setTimeout( () => {
-        topbar.hide();
-    },300);
+
 
 
 });
