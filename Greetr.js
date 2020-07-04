@@ -24,7 +24,7 @@
         return new Greetr.init( fName, lName, language );
     }
 
-    // Hidden within the scope is this IIFE
+    // Hidden within the scope in this IIFE
     // Properties are never directly accessible
     // Supported Languages
     const supportedLangs = [
@@ -35,8 +35,6 @@
         'it', // Italian
     ];
 
-    // Hidden within the scope is this IIFE
-    // Properties are never directly accessible
     // Casual Greetings
     const greetings = {
         'en': 'Hello',
@@ -46,8 +44,6 @@
         'it': 'Ciao',
     }
 
-    // Hidden within the scope is this IIFE
-    // Properties are never directly accessible
     // Formal Greetings
     const formalGreetings = {
         'en': 'Greetings',
@@ -57,8 +53,6 @@
         'it': 'Salve',
     }
 
-    // Hidden within the scope is this IIFE
-    // Properties are never directly accessible
     // Console logged messages
     const logMessages = {
         'en': 'Logged in...',
@@ -68,13 +62,22 @@
         'it': 'connesso...',
     }
 
+    // Used to store custom messages
+    let customMessage = {
+
+        'msg': ''
+
+    }
+
     Greetr.prototype = {
+
         // Getter: Returns users first and last name
         fullName: function( ) {
 
             return this.fName + ' ' + this.lName;
 
         },
+
         // Checks if the passed language is valid and supported
         validate: function( ) {
 
@@ -83,20 +86,55 @@
             }
 
         },
+
+        // Checks if the passed custom message is a valid
+        validateMessage: function ( msg ) {
+            // Validation
+            // Check if a message was passed
+            if(!msg) {
+                throw "No message found...";
+            }
+
+            // Validation
+            // Check if the passed message is a string
+            if(typeof msg !== "string") {
+                throw "The message must be a string...";
+            }
+
+            return msg;
+
+        },
+
         // Setter: Sets a casual greeting
         greeting: function( ) {
 
             return greetings[this.language]  + ' ' + this.fName + '!';
 
         },
+
         // Setter: Sets a formal greeting
         formalGreeting: function( ) {
 
             return formalGreetings[this.language] + ' ' + this.fullName() + '.';
 
         },
+
+        // Getter: Updates the greeting message with the custom message
+        customGreeting: function( ) {
+
+            if(customMessage["msg"] === "") {
+
+                throw "Please set the message first";
+
+            }
+
+            return customMessage["msg"];
+
+        },
+
         // Getter: Updates the greeting message of a Greetr object
         greet: function( formal ) {
+
             // msg will be updated with our greeting message
             let msg;
 
@@ -119,8 +157,18 @@
             return this;
 
         },
+
+        // Used to set a custom message
+        setMessage: function( msg ) {
+
+            customMessage["msg"] = msg;
+
+            return this;
+
+        },
+
         // Used to update the console
-        log: function() {
+        log: function( ) {
 
             if( console ) {
                 console.log( logMessages[this.language] + ' ' + this.fullName() );
@@ -129,6 +177,7 @@
             return this;
 
         },
+
         // Used to change the language for a user
         setLang: function( lang ) {
 
@@ -139,8 +188,9 @@
             return this;
 
         },
+
         // Used to update an html property with a greeting
-        updateHtml: function ( selector, formal ) {
+        updateHtml: function ( selector, formal, custom ) {
 
             // Check if jQuery is in the environment
             if(!$) {
@@ -150,17 +200,35 @@
             if(!selector) {
                 throw "Missing jQuery selector...";
             }
+            // Check if formal and boolean are booleans
+            if(formal) {
+                if(typeof formal !== "boolean") {
+                    throw "Parameter 'format' must be a boolean..."
+                }
+            }
+            if(custom) {
+                if(typeof custom !== "boolean") {
+                    throw "Parameter 'custom' must be a boolean..."
+                }
+            }
+
 
             let msg;
 
             if(formal) {
+
                 // If formal is true
                 msg = this.formalGreeting();
 
             } else {
+
                 // If formal is false
                 msg = this.greeting();
 
+            }
+
+            if(custom) {
+                msg += ' ' + this.customGreeting();
             }
 
             // Use jQuery to update the html

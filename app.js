@@ -41,4 +41,12 @@ prop1.addEventListener('click', () => {
     // function to reset it to the user's original choice
     gObj.setLang(userLang).log();
 
+    // Example 7: Setting and Greeting with a Custom Message
+    let message = 'I am a custom message!';
+    /*
+    gObj.setMessage(message);
+    console.log(gObj);
+    gObj.updateHtml('#prop-7', true, true);*/
+    gObj.setMessage(message).updateHtml('#prop-7', false, true);
+
 });
