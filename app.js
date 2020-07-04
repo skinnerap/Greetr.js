@@ -1,6 +1,8 @@
 const prop1 = document.getElementById('prop-1-submit');
 prop1.addEventListener('click', () => {
 
+    topbar.show();
+
     // Setup
     const fName = $('#prop-1-fName').val();
     const lName = $('#prop-1-lName').val();
@@ -48,6 +50,11 @@ prop1.addEventListener('click', () => {
     console.log(gObj);
     gObj.updateHtml('#prop-7', true, true);*/
     gObj.setMessage(message).updateHtml('#prop-7', false, true);
+
+    setTimeout( () => {
+        topbar.hide();
+    },300);
+
 
 });
 
